@@ -8,6 +8,9 @@ export const Header = () => {
   const path = useLocation().pathname
   return (
     <Navbar className="border-b-2">
+
+      {/* Logo  */}
+
       <Link
         to="/"
         className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
@@ -17,6 +20,9 @@ export const Header = () => {
         </span>
         Blog
       </Link>
+
+      {/* Search  */}
+
       <form>
         <TextInput
           type="text"
@@ -32,11 +38,17 @@ export const Header = () => {
         <Button className="w-12 h-10 hidden sm:inline" color="gray" pill>
           <FaMoon />
         </Button>
+
+        {/* Signin  */}
+
         <Link to="/sign_in">
-          <Button gradientDuoTone="purpleToBlue">Sign In</Button>
+          <Button gradientDuoTone="purpleToBlue" outline>Sign In</Button>
         </Link>
         <Navbar.Toggle />
       </div>
+
+      {/* Navbar content  */}
+
       <Navbar.Collapse>
         <Navbar.Link active={path === '/'} as={'div'}>
           <Link to="/" className="text-lg">
